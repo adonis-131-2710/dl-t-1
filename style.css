@@ -1,0 +1,396 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Verdana";
+}
+
+body {
+    background-image: url(img-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+.main_box {
+    background: rgba(39, 1, 39, 0.45);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    margin: 50px 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.wrapper {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid white;
+    background: rgba(1, 5, 50, 0.616);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(255, 255, 255);
+    flex-shrink: 0;
+}
+
+.navigation {
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 40px;
+    background: rgba(15, 0, 28, 0.669);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+.menu_all {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgb(226, 228, 236);
+    color: rgb(76, 15, 120);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.menu {
+    position: relative;
+    padding: 8px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    z-index: 2;
+    color: rgb(196, 199, 208);
+    font-size: 14px;
+    white-space: nowrap;
+    transition: color 0.3s;
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.flex-box1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.flex-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.liquid, .liquid1, .liquid3, .liquid4, .liquid5, .liquid6, .liquid7 {
+    position: absolute;
+    height: 36px;
+    border-radius: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    left: var(--left); 
+    width: var(--width);
+    transition: 
+        left 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+        width 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.liquid1 {
+    background: rgb(255, 255, 255);
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+.liquid {
+    background: linear-gradient(135deg, rgb(197, 127, 222), rgb(95, 180, 255));
+    box-shadow: 0 0 15px rgba(95, 180, 255, 0.5);
+}
+
+.menu.active1 {
+    background-image: linear-gradient(90deg, #de3cbb, #3869db);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.menu.active {
+    color: rgb(255, 255, 255);
+}
+
+.liquid3 {
+    position: absolute;
+    width: 8px; 
+    height: 8px; 
+    border-radius: 50%; 
+    top: 70%; 
+    z-index: 1;
+    left: var(--left); 
+    background: rgb(117, 170, 255);
+    box-shadow: 0 0 8px rgba(34, 105, 219, 0.6);
+    transform: translateX(calc((var(--width) / 2) - 4px));
+    transition: 
+        left 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+        transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.liquid4 {
+    position: absolute;
+    width: var(--width); 
+    height: 6px; 
+    border-radius: 5px;
+    bottom: -2px; 
+    top: 99%; 
+    z-index: 1;
+    left: var(--left); 
+    background: rgb(117, 170, 255);
+    box-shadow: 0 0 8px rgba(34, 105, 219, 0.6);
+    transition: 
+        left 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+        transform 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.menu.active3 {
+    color: rgb(117, 170, 255);
+    text-shadow: 0 0 8px rgba(34, 105, 219, 0.6);
+}
+
+.liquid5 {
+    background-color: rgb(235, 240, 255);
+    box-shadow: 0 0 5px rgba(100, 136, 193, 0.6);
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.menu.active5 {
+    color: rgb(0, 84, 219);
+}
+
+.box-nav {
+    width: 100%;
+    border-radius: 7px;
+    padding: 5px 0;
+    background: rgba(232, 232, 232, 0.15);
+    display: flex;
+    justify-content: space-between;
+}
+
+.liquid6 {
+    background: rgba(15, 0, 28, 0.669);
+    box-shadow: 0 0 5px rgba(100, 136, 193, 0.6);
+    padding: 8px 16px;
+    border-radius: 5px;
+}
+
+.menu.active6 {
+    color: rgb(69, 137, 247);
+}
+
+.box-nav8 {
+    width: 98.5%;
+    border-radius: 7px;
+    padding: 5px 0;
+    background: rgba(232, 232, 232, 0.15);
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation8 {
+    width: 100%;
+    border-radius: 10px;
+    padding: 15px 7px;
+    background: rgba(15, 0, 28, 0.864);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+.liquid7 {
+    top:55.14%;
+    background: rgba(15, 0, 28, 0.7);
+    padding: 8px 16px;
+    border-radius: 5px 5px 0 0;
+}
+
+.menu.active7 {
+    color: rgb(69, 137, 247);
+}
+
+
+@media only screen and (max-width: 1140px) {
+    .wrapper {
+        width: 95%; 
+        gap: 15px;
+    }
+
+    .number {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .navigation, .navigation8 {
+        padding: 10px 15px;
+        overflow-x: auto; 
+        justify-content:space-between;
+        gap: 10px;
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    .navigation::-webkit-scrollbar, 
+    .navigation8::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu {
+        padding: 6px 10px;
+        font-size: 12px; 
+    }
+
+    .icon {
+        font-size: 16px;
+    }
+
+    .menu_all {
+        width: 35px;
+        height: 35px;
+        flex-shrink: 0; 
+    }
+
+    .box-nav, .box-nav8 {
+        justify-content: space-between;
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .wrapper {
+        width: 95%; 
+        gap: 15px;
+    }
+
+    .number {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .navigation, .navigation8 {
+        padding: 8px 15px;
+        overflow-x: auto; 
+        justify-content:space-between;
+        gap: 8px;
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    .navigation::-webkit-scrollbar, 
+    .navigation8::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu {
+        padding: 10px 10px;
+        font-size: 10px; 
+    }
+
+    .icon {
+        font-size: 14px;
+    }
+
+    .menu_all {
+        width: 32px;
+        height: 32px;
+        flex-shrink: 0; 
+    }
+
+    .box-nav, .box-nav8 {
+        width: 100%;
+        justify-content: space-between;
+        gap: 8px;
+    }
+
+    .liquid6 {
+        padding: 5px 16px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .number {
+        display: none;
+    }
+}
+
+/* Responsive đặc biệt cho màn hình từ 390px trở xuống */
+@media only screen and (max-width: 655px) {
+    .wrapper {
+        width: 100%; /* Chiếm hết chiều ngang */
+        padding: 0 10px;
+    }
+
+    .navigation, .navigation8 {
+        /* Quan trọng: Ngăn các menu co lại quá nhỏ */
+        justify-content: flex-start !important; 
+        gap: 5px;
+        padding: 10px 5px;
+        /* Cho phép vuốt ngang mượt mà */
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    .menu {
+        /* Giảm padding để tiết kiệm diện tích nhưng vẫn đủ để chạm */
+        padding: 8px 12px;
+        font-size: 11px;
+        flex-shrink: 0; /* KHÔNG cho phép menu bị bóp méo */
+    }
+
+    .icon {
+        font-size: 18px; /* Giữ icon đủ to để dễ bấm */
+    }
+
+    /* Điều chỉnh các hộp chứa bên trong nav 7, 8 */
+    .box-nav, .box-nav8 {
+        width: auto;
+        justify-content: flex-start !important;
+        gap: 5px;
+        background: transparent; /* Bỏ nền xám để nhìn thoáng hơn trên mobile */
+    }
+
+    /* Ẩn thanh cuộn xấu xí trên mobile */
+    .navigation::-webkit-scrollbar,
+    .navigation8::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Chỉnh lại vị trí các loại liquid cho khớp với cỡ chữ mới */
+    .liquid, .liquid1, .liquid5, .liquid6, .liquid7 {
+        height: 32px;
+    }
+    
+    .liquid3 {
+        bottom: 5px; /* Đẩy chấm tròn lên một chút */
+    }
+}
