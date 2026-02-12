@@ -129,33 +129,36 @@
         document.querySelectorAll(".navigation, .navigation8").forEach(nav => {
             const activeMenu = nav.querySelector('[class*="active"]');
             const liquid = nav.querySelector('[class*="liquid"]');
-
+        
             if (activeMenu && liquid) {
-                nav.style.setProperty('--left', `${activeMenu.offsetLeft}px`);
-                nav.style.setProperty('--width', `${activeMenu.offsetWidth}px`);
+                const leftPos = activeMenu.offsetLeft;
+                const width = activeMenu.offsetWidth;
+            
+                nav.style.setProperty('--left', `${leftPos}px`);
+                nav.style.setProperty('--width', `${width}px`);
             }
         });
     };
-
+    
     document.querySelectorAll(".menu").forEach(menu => {
         menu.addEventListener("click", function() {
             const nav = this.closest(".navigation") || this.closest(".navigation8");
             const currentActive = nav.querySelector('[class*="active"]');
-
+        
             if (currentActive) {
                 const activeClass = Array.from(currentActive.classList).find(c => c.startsWith('active'));
                 currentActive.classList.remove(activeClass);
                 this.classList.add(activeClass);
             }
+            
             updateLiquid();
+        
+            this.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
         });
     });
-
-    window.onload = updateLiquid;
-    window.addEventListener("resize", updateLiquid);
-
-    document.addEventListener("DOMContentLoaded", updateLiquid);
     
+    window.addEventListener("resize", updateLiquid);
+    window.onload = updateLiquid;
     </script>
 </body>
 </html>
