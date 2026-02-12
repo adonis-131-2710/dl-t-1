@@ -285,3 +285,26 @@ body {
         gap: 10px;
     }
 }
+
+
+@media only screen and (max-width: 800px) {
+    .box-nav, .box-nav8 {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start !important;
+        gap: 10px;
+        overflow-x: auto; 
+        white-space: nowrap; 
+        padding: 5px 10px;
+        -webkit-overflow-scrolling: touch; 
+    }
+
+    .box-nav::-webkit-scrollbar, 
+    .box-nav8::-webkit-scrollbar {
+        display: none;
+    }
+
+    .menu {
+        flex-shrink: 0; 
+    }
+}
